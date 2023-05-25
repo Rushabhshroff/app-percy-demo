@@ -22,6 +22,9 @@ steps:
     npm install
     npm run upload-app
   displayName: 'Upload Apps'
+  env:
+    BROWSERSTACK_USERNAME: $(BROWSERSTACK_USERNAME)
+    BROWSERSTACK_ACCESS_KEY: $(BROWSERSTACK_ACCESS_KEY)
 - script: |
     npm run percy:test
   displayName: 'Run E2E with Percy'
