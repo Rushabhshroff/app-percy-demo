@@ -34,7 +34,9 @@ describe("End to End test", async () => {
     await HomePage.openMenu();
     await HomePage.selectMenuOption("Orders");
     await browser.pause(2000);
-    await percyScreenshot("Orders Page");
+    await percyScreenshot("Orders Page",{
+      ignoreRegionAccessibilityIds:["~number-of-orders"]
+    });
     await expect(await OrdersPage.ordersCount).toHaveText("1 order(s) found.");
     await expect((await OrdersPage.ordersList).length).toBe(3);
   });

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This project contains examples to run appium tests locally and on BrowserStack",
   "devDependencies": {
-    "@percy/appium-app": "^0.0.5",
+    "@percy/appium-app": "^1.1.0",
     "@percy/cli": "^1.24.2",
     "@wdio/allure-reporter": "^7.16.13",
     "@wdio/appium-service": "^7.16.13",
