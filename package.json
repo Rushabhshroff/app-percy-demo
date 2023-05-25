@@ -21,7 +21,7 @@
   "scripts": {
     "upload-app": "node ./app/upload.js",
     "test": "wdio run resources/conf/wdio-bstack.conf.js",
-    "percy:test": "percy app:exec --port 5339 -- wdio run resources/conf/wdio-bstack.conf.js",
+    "percy:test": "percy app:exec -v --port 5339 -- wdio run resources/conf/wdio-bstack.conf.js",
     "generate-report": "./node_modules/allure-commandline/bin/allure generate allure-results --clean && ./node_modules/allure-commandline/bin/allure open"
   },
   "keywords": [
