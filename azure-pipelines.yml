@@ -1,0 +1,30 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'Install dependencies'
+- script: |
+    npm install
+    npm run upload-app
+  displayName: 'Upload Apps'
+- script: |
+    npm run percy:test
+  displayName: 'Run E2E with Percy'
+  env:
+    PERCY_TOKEN: $(PERCY_TOKEN)
+
