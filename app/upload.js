@@ -46,11 +46,11 @@ async function uploadApp(appPath, customId) {
 
 async function main() {
   //upload Android App
-  if (await noAppExists("BStackAppAndroid")) {
+  if (await noAppExists("BStackAppAndroidChanged")) {
     await uploadApp("./app/browserstack-demoapp-changed.apk", "BStackAppAndroidChanged");
   }
   // //Upload iOS App
-  if (await noAppExists("BStackAppIOS")) {
+  if (await noAppExists("BStackAppIOSChanged")) {
     await uploadApp("./app/browserstack-demoapp-changed.ipa", "BStackAppIOSChanged");
   }
 }
