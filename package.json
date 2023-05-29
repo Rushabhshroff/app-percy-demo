@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This project contains examples to run appium tests locally and on BrowserStack",
   "devDependencies": {
-    "@percy/appium-app": "^0.0.5",
+    "@percy/appium-app": "^1.1.0",
     "@percy/cli": "^1.24.2",
     "@wdio/allure-reporter": "^7.16.13",
     "@wdio/appium-service": "^7.16.13",
@@ -21,7 +21,7 @@
   "scripts": {
     "upload-app": "node ./app/upload.js",
     "test": "wdio run resources/conf/wdio-bstack.conf.js",
-    "percy:test": "percy app:exec --port 5339 -- wdio run resources/conf/wdio-bstack.conf.js",
+    "percy:test": "percy app:exec -v --port 5339 -- wdio run resources/conf/wdio-bstack.conf.js",
     "generate-report": "./node_modules/allure-commandline/bin/allure generate allure-results --clean && ./node_modules/allure-commandline/bin/allure open"
   },
   "keywords": [
